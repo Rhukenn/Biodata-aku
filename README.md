@@ -1,1 +1,278 @@
-# Biodata-aku
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Rusdianto - Full Fitur</title>
+
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+        body{background:#f5f5f5;scroll-behavior:smooth;}
+
+        /* PRELOADER */
+        #preloader{
+            position:fixed;top:0;left:0;width:100%;height:100%;
+            background:white;display:flex;align-items:center;
+            justify-content:center;z-index:9999;
+        }
+        #preloader div{
+            width:40px;height:40px;border:5px solid #2e7d32;
+            border-top-color:transparent;border-radius:50%;
+            animation:spin 1s linear infinite;
+        }
+        @keyframes spin{to{transform:rotate(360deg)}}
+
+        /* NAVBAR */
+        nav{
+            background:#2e7d32;color:white;padding:14px 40px;
+            display:flex;justify-content:space-between;align-items:center;
+            position:fixed;width:100%;z-index:100;
+        }
+        nav ul{display:flex;list-style:none;gap:20px;}
+        nav a{color:white;text-decoration:none;font-size:16px;}
+        #darkBtn{padding:5px 10px;border:none;border-radius:5px;cursor:pointer;}
+
+        /* HEADER PARALLAX */
+        #home{
+            background:url('bg.jpg') center/cover no-repeat fixed;
+            color:white;text-align:center;padding:140px 20px 100px;margin-top:60px;
+        }
+        #home h1{font-size:45px;text-shadow:2px 2px 5px black;}
+        #home p{font-size:20px;margin-top:10px;}
+
+        /* CONTAINER */
+        .container{
+            width:85%;max-width:900px;background:white;margin:30px auto;
+            padding:25px;border-radius:10px;box-shadow:0px 0px 10px #ccc;
+        }
+
+        /* ANIMASI SCROLL */
+        .fade{opacity:0;transform:translateY(20px);transition:.7s;}
+        .fade.show{opacity:1;transform:translateY(0);}
+
+        /* BIODATA */
+        .profile{display:flex;gap:25px;flex-wrap:wrap;}
+        .profile img{
+            width:150px;height:150px;border-radius:100%;object-fit:cover;
+            border:4px solid #2e7d32;
+        }
+        table td{padding:7px;font-size:17px;}
+
+        /* SKILL BAR */
+        .skill-bar{margin:10px 0;}
+        .skill-title{font-weight:bold;}
+        .bar{height:20px;width:100%;background:#ddd;border-radius:5px;overflow:hidden;}
+        .bar-fill{
+            height:100%;width:0;background:#2e7d32;border-radius:5px;
+            transition:1s;
+        }
+
+        /* GALLERY */
+        .gallery{display:flex;gap:15px;flex-wrap:wrap;}
+        .gallery img{
+            width:30%;border-radius:10px;object-fit:cover;
+            cursor:pointer;transition:.3s;
+        }
+        .gallery img:hover{transform:scale(1.06);}
+
+        /* TIMELINE */
+        .timeline{border-left:4px solid #2e7d32;padding-left:20px;}
+        .timeline div{margin:15px 0;}
+        .timeline h3{color:#2e7d32;}
+
+        /* PORTOFOLIO */
+        .cards{display:flex;gap:15px;flex-wrap:wrap;}
+        .card{
+            width:30%;background:#eee;border-radius:10px;padding:15px;
+            text-align:center;transition:.3s;
+        }
+        .card:hover{transform:translateY(-5px)}
+
+        /* FORM */
+        form{display:flex;flex-direction:column;}
+        form input,form textarea{
+            padding:10px;margin:10px 0;border-radius:5px;border:1px solid #999;
+        }
+        form button{
+            background:#2e7d32;color:white;padding:12px;border:none;
+            border-radius:6px;cursor:pointer;font-size:18px;
+        }
+
+        /* MUSIC PLAYER */
+        #musicBox{text-align:center;margin-top:10px;}
+
+        /* FOOTER */
+        footer{
+            text-align:center;padding:15px;background:#2e7d32;
+            color:white;margin-top:20px;
+        }
+
+        /* DARK MODE */
+        .dark{background:#111;color:white;}
+        .dark nav{background:black;}
+        .dark .container{background:#222;color:white;}
+        .dark form input,.dark form textarea{background:#333;color:white;}
+        .dark footer{background:black;}
+    </style>
+</head>
+
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader"><div></div></div>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">RUSDIANTO</div>
+    <ul>
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#biodata">Biodata</a></li>
+        <li><a href="#skills">Skill</a></li>
+        <li><a href="#gallery">Galeri</a></li>
+        <li><a href="#timeline">Pendidikan</a></li>
+        <li><a href="#portfolio">Portofolio</a></li>
+        <li><a href="#contact">Kontak</a></li>
+    </ul>
+    <button id="darkBtn">🌙</button>
+</nav>
+
+<!-- HEADER -->
+<section id="home">
+    <h1>Selamat Datang</h1>
+    <p>Website Biodata Profesional Full Fitur</p>
+    <a href="cv.pdf" download style="color:rgb(119, 118, 58);font-size:20px;text-decoration:underline;">Download CV</a>
+
+    <!-- MUSIC PLAYER -->
+    <div id="musicBox">
+        <audio controls>
+            <source src="Alone - Alan Walker.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+</section>
+
+<!-- BIODATA -->
+<section id="biodata" class="container fade">
+    <h2>Biodata Diri</h2>
+    <div class="profile">
+        <img src="Rhukenn.jpg" alt="Foto">
+        <table>
+            <tr><td>Nama</td><td>: Rusdianto</td></tr>
+            <tr><td>NIM</td><td>: 2023030022</td></tr>
+            <tr><td>Prodi</td><td>: Teknik Komputer</td></tr>
+            <tr><td>TTL</td><td>: Wabula, 29 November 2003</td></tr>
+            <tr><td>Alamat</td><td>: Jl. Abdesir lor.7</td></tr>
+            <tr><td>Email</td><td>: rusdiantoadijaya@gmail.com</td></tr>
+        </table>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="container fade">
+    <h2>Keahlian</h2>
+
+    <div class="skill-bar">
+        <div class="skill-title">HTML / CSS</div>
+        <div class="bar"><div class="bar-fill" data-fill="75%"></div></div>
+    </div>
+
+    <div class="skill-bar">
+        <div class="skill-title">JavaScript</div>
+        <div class="bar"><div class="bar-fill" data-fill="75%"></div></div>
+    </div>
+
+    <div class="skill-bar">
+        <div class="skill-title">Arduino / ESP32</div>
+        <div class="bar"><div class="bar-fill" data-fill="85%"></div></div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="container fade">
+    <h2>Galeri Foto</h2>
+    <div class="gallery">
+        <img src="foto job.jpg">
+        <img src="job2.jpg">
+        <img src="foto project.jpg">
+    </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline" class="container fade">
+    <h2>Riwayat Pendidikan</h2>
+    <div class="timeline">
+        <div>
+            <h3>2023 - Sekarang</h3>
+            <p>Universitas Handayani Makassar — Teknik Komputer</p>
+        </div>
+        <div>
+            <h3>2019 - 2022</h3>
+            <p>SMA — Jurusan IPA</p>
+        </div>
+        <div>
+            <h3>2016 - 2019</h3>
+            <p>SMP</p>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="container fade">
+    <h2>Portofolio Project</h2>
+    <div class="cards">
+        <div class="card">Project 1<br>Website Portfolio</div>
+        <div class="card">Project 2<br>Sistem IoT</div>
+        <div class="card">Project 3<br>Desain Grafis</div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="container fade">
+    <h2>Hubungi Saya</h2>
+    <form>
+        <input type="text" placeholder="Nama Anda">
+        <input type="email" placeholder="Email Anda">
+        <textarea placeholder="Pesan Anda"></textarea>
+        <button>Kirim</button>
+    </form>
+</section>
+
+<footer>
+    &copy; 2025 Rusdianto - Teknik Komputer
+</footer>
+
+<script>
+    // PRELOADER
+    window.onload = () => {
+        document.getElementById("preloader").style.display = "none";
+    };
+
+    // DARK MODE
+    document.getElementById("darkBtn").onclick = () => {
+        document.body.classList.toggle("dark");
+    };
+
+    // SCROLL ANIMATION
+    const fadeElements = document.querySelectorAll('.fade');
+    function showOnScroll(){
+        fadeElements.forEach(el=>{
+            const rect = el.getBoundingClientRect();
+            if(rect.top < window.innerHeight - 100){
+                el.classList.add('show');
+            }
+        });
+    }
+    window.addEventListener('scroll', showOnScroll);
+    showOnScroll();
+
+    // SKILL BAR ANIMATION
+    const bars = document.querySelectorAll('.bar-fill');
+    function fillBars(){
+        bars.forEach(bar=>{
+            bar.style.width = bar.dataset.fill;
+        });
+    }
+    fillBars();
+</script>
+
+</body>
+</html>
